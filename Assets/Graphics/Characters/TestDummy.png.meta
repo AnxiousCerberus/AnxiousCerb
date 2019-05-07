@@ -1,0 +1,379 @@
+fileFormatVersion: 2
+guid: b61926f9a2bafe14b8fb7ee6945a2604
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1195458779362535816
+    second: unknown_0
+  - first:
+      213: -8320757548278642637
+    second: unknown_1
+  - first:
+      213: -6772224219630684528
+    second: unknown_2
+  - first:
+      213: -1624457943145997941
+    second: unknown_3
+  - first:
+      213: 3403815374409998926
+    second: unknown_4
+  - first:
+      213: 7510165594874259007
+    second: unknown_5
+  - first:
+      213: 7225022957171959001
+    second: unknown_6
+  - first:
+      213: 2250420894525969951
+    second: unknown_7
+  - first:
+      213: 4562625420153205747
+    second: unknown_8
+  - first:
+      213: 2908934945869905897
+    second: TestDummy_0
+  - first:
+      213: -3355512648236020439
+    second: TestDummy_1
+  - first:
+      213: 2530733269290885057
+    second: TestDummy_2
+  - first:
+      213: -4341686385908796445
+    second: TestDummy_3
+  - first:
+      213: -2968562132067543579
+    second: TestDummy_4
+  - first:
+      213: 2847277403816244599
+    second: TestDummy_5
+  - first:
+      213: 8500658146060790651
+    second: TestDummy_6
+  - first:
+      213: -1989991162566550785
+    second: TestDummy_7
+  - first:
+      213: 8569470525788125504
+    second: TestDummy_8
+  - first:
+      213: -7284648169922704201
+    second: TestDummy_9
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TestDummy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 10.1
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b8220511844664b95f787a79d223b0
+      internalID: 2908934945869905897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestDummy_1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 10.1
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb22e4fb6a8452c499d5e99d1992a0ce
+      internalID: -3355512648236020439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestDummy_2
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 10.1
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda0a77da8c711c48bca39b8873fcb58
+      internalID: 2530733269290885057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestDummy_3
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 10.1
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24efd44d10c144b42b16f98beab7becc
+      internalID: -4341686385908796445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestDummy_4
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 10.1
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2298bd2778717fc4dbba7a8d20dd810f
+      internalID: -2968562132067543579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestDummy_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 10.1
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3439c2877bbfd43a035be98cb180f8
+      internalID: 2847277403816244599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestDummy_6
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 10.1
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe7256ad66ca5d4e859e39b0543b85f
+      internalID: 8500658146060790651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestDummy_7
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 10.1
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64cc1919b1f81ec4e9d8e07ef270f28c
+      internalID: -1989991162566550785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestDummy_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 10.1
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc79b0b6df2101439534dd1dffc535a
+      internalID: 8569470525788125504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestDummy_9
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 10.1
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d962c14a9c6e74b82d663e959fbe07
+      internalID: -7284648169922704201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 334740a09bac82f4da8ff5b1888ceaae
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
