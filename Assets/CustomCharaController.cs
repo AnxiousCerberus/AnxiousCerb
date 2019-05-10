@@ -37,7 +37,7 @@ public class CustomCharaController : MonoBehaviour
         //Debug.Log("H Axis Input = " + Input.GetAxis("Horizontal"));
 
         xDirection = Input.GetAxisRaw("Horizontal");
-        Debug.Log("xDirection = " + xDirection);
+
         //Move!!
         if (Mathf.Abs(xDirection) > 0f)
         {
@@ -57,7 +57,6 @@ public class CustomCharaController : MonoBehaviour
         velocity.y += gravity * .5f * Time.deltaTime;
 
         character.MoveX(velocity.x * Time.deltaTime, Character.Slide.Perpendicular);
-        Debug.Log("Velocity.x = " + velocity.x);
 
         if (!character.MoveY(velocity.y * Time.deltaTime))
             velocity.y = groundVelY;
