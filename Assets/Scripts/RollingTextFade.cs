@@ -20,6 +20,7 @@ namespace TMPro.Examples
         {
             m_TextComponent = GetComponent<TMP_Text>();
             ready = true;
+            DialogueManager.fadeController = this;
         }
 
 
@@ -86,8 +87,7 @@ namespace TMPro.Examples
                     newVertexColors[vertexIndex + 2] = (Color)newVertexColors[vertexIndex + 2] * ColorTint;
                     newVertexColors[vertexIndex + 3] = (Color)newVertexColors[vertexIndex + 3] * ColorTint;
 
-                    //TODO : Accelerate this
-                    if (alpha >= 200)
+                    if (alpha == 255)
                     {
                         startingCharacterRange += 1;
 
@@ -95,13 +95,6 @@ namespace TMPro.Examples
                         {
                             // Update mesh vertex data one last time.
                             m_TextComponent.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
-
-                            yield return new WaitForSeconds(1.0f);
-
-                            // Reset the text object back to original state.
-                            //m_TextComponent.ForceMeshUpdate();
-
-                            yield return new WaitForSeconds(1.0f);
 
                             // Reset our counters.
                             currentCharacter = 0;
@@ -119,7 +112,6 @@ namespace TMPro.Examples
                 yield return new WaitForSeconds(0.25f - FadeSpeed * 0.01f);
             }
 
-            //TODO : IsReady is set true waaaay too late.
             ready = true;
             Debug.Log("Text Over");
         }

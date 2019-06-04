@@ -5,11 +5,5 @@ using UnityEngine;
 public class TalkableNPC : NPC
 {
 
-    public bool PlayerCanTriggerTalk = true;
 
-
-    public void TriggerDialogue ()
-    {
-
-    }
 }

@@ -69,5 +69,10 @@ public class CustomCharaController : MonoBehaviour
         else if (xDirection > .01f)
             renderer.flipX = false;
 
+        //Dialogue Stuff
+        if (DialogueManager.DialogueInProgress && Input.GetButtonDown("Interact"))
+        {
+            DialogueManager.DialogueContinue();
+        }
     }
 }
