@@ -7,7 +7,8 @@ public class NPC : MonoBehaviour
 
     bool playerNear = false;
     public bool PlayerCanTriggerTalk = true;
-    [SerializeField] TextAsset dialogueJSON;
+    [SerializeField] TextAsset dialogueJSON = null;
+    public string SubScene;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,10 @@ public class NPC : MonoBehaviour
     {
         if (playerNear & Input.GetButtonDown("Interact") & !DialogueManager.DialogueInProgress)
         {
-            DialogueManager.DialogueStart(dialogueJSON);
+            if (SubScene != null && SubScene != "")
+                DialogueManager.DialogueStart(dialogueJSON, SubScene);
+            else
+                DialogueManager.DialogueStart(dialogueJSON);
         }
     }
 

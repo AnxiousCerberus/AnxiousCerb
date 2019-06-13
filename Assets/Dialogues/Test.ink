@@ -1,9 +1,21 @@
-Pou pou pou pou, ici c'est le début de l'histoire, ohlala.
--> LaSuite
+VAR talkedOnce = false
 
-=== LaSuite ===
+=== TEST_SUBSCENE ===
+{- talkedOnce == false:
+     -> Talk_first
+    - else:
+     -> Talk_second
+}
 
--Dis donc ohlala mais c'est fou tout ce texte qui fait suite au premier hein ?
--J'avoue
--Unbelievable
--> END
+= Talk_first
+~ talkedOnce = true
+# Sandy
+"Heya!"
+# Ananda
+"Heya Yourself!"
+-> DONE
+
+= Talk_second
+# Sandy
+"Oh, it's you again! How's life?"
+-> DONE

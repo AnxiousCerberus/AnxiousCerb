@@ -113,7 +113,7 @@ namespace TMPro.Examples
             }
 
             ready = true;
-            Debug.Log("Text Over");
+            //Debug.Log("Text Over");
         }
     }
 }
