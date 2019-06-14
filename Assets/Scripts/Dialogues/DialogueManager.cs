@@ -10,7 +10,7 @@ static class DialogueManager
 
     static public RollingTextFade fadeController;
     static public DialogueUI UIController;
-
+    static public Transform currentSpeaker;
     static public bool DialogueInProgress = false;
 
     static Story story = null;
@@ -54,6 +54,15 @@ static class DialogueManager
                 fadeController.GetComponent<TextMeshProUGUI>().text = story.Continue().Trim();
                 fadeController.StartCoroutine(fadeController.AnimateVertexColors());
                 //Debug.Log("Path visited = " + story.state.VisitCountAtPathString("TEST_SUBSCENE.Talk_first"));
+
+                //Parsing if current text is attached to a speaker
+                foreach (string tag in story.currentTags)
+                {
+                    Debug.Log("Current tags = " + tag);
+
+                    if (tag.Contains("Speaker:"))
+                        Debug.Log("Detected a Speaker!");
+                }
             }
             else
                 DialogueEnd();

@@ -2281,7 +2281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611298422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.29, y: -1.05, z: 0}
+  m_LocalPosition: {x: 0.45, y: -1.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 365223687}
@@ -2300,8 +2300,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCanTriggerTalk: 1
-  dialogueJSON: {fileID: 0}
-  SubScene: 
+  dialogueJSON: {fileID: 4900000, guid: 13d865ce6d7fae446bafd1779eafbf96, type: 3}
+  SubScene: Violette_Test
 --- !u!61 &1611298426
 BoxCollider2D:
   m_ObjectHideFlags: 0
