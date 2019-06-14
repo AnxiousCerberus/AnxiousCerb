@@ -21,10 +21,15 @@ public class NPC : MonoBehaviour
     {
         if (playerNear & Input.GetButtonDown("Interact") & !DialogueManager.DialogueInProgress)
         {
-            if (SubScene != null && SubScene != "")
-                DialogueManager.DialogueStart(dialogueJSON, SubScene);
+            if (dialogueJSON == null)
+                Debug.LogWarning(transform.name + " triggered a dialogue but no JSON was set!");
             else
-                DialogueManager.DialogueStart(dialogueJSON);
+            {
+                if (SubScene != null && SubScene != "")
+                    DialogueManager.DialogueStart(dialogueJSON, SubScene);
+                else
+                    DialogueManager.DialogueStart(dialogueJSON);
+            }
         }
     }
 

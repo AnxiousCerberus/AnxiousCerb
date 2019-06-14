@@ -65,9 +65,6 @@ static class DialogueManager
         Debug.Log("AFTER talkedOnce = " + story.variablesState["talkedOnce"]);
         UIController.VisibilityOff();
         //Debug.Log("DIALOGUEMANAGER => Closing Dialogue");
-
-        //TODO: FFS, there must be a way to exit the UI of the dialogue after a stitch, keep the variables as is, then resume while checking variables right after.
-
         //DialogueInProgress is set to false in DialogueUI, in order to have a little cool down period.
     }
 }
