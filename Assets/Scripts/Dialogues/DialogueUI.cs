@@ -9,6 +9,7 @@ public class DialogueUI : MonoBehaviour
     Color defaultBubbleColor;
     Color defaultTextColor;
 
+    public PortraitsManager portraits;
     public float closeCooldDown = 0;
 
     Image bubbleImage;
