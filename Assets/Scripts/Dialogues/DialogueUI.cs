@@ -9,7 +9,10 @@ public class DialogueUI : MonoBehaviour
     Color defaultBubbleColor;
     Color defaultTextColor;
 
-    public PortraitsManager portraits;
+    public PortraitsManager portraitsData;
+    Image portraitDisplay;
+
+    [HideInInspector]
     public float closeCooldDown = 0;
 
     Image bubbleImage;
@@ -20,11 +23,13 @@ public class DialogueUI : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        portraitDisplay = transform.Find("UI_SpeechPortrait").GetComponent<Image>();
         bubbleImage = this.GetComponent<Image>();
         textDisplay = this.GetComponentInChildren<TMPro.TMP_Text>();
 
         defaultBubbleColor = bubbleImage.color;
         defaultTextColor = textDisplay.color;
+        portraitDisplay.enabled = false;
 
         DialogueManager.UIController = this;
 
@@ -52,6 +57,8 @@ public class DialogueUI : MonoBehaviour
         bubbleImage.color = defaultBubbleColor;
         textDisplay.color = defaultTextColor;
 
+        portraitDisplay.enabled = true;
+
         Visible = true;
     }
 
@@ -59,9 +66,22 @@ public class DialogueUI : MonoBehaviour
     {
         Color targetColor = new Color(255, 255, 255, 0);
         bubbleImage.color = targetColor;
-
         textDisplay.color = targetColor;
 
+        portraitDisplay.enabled = false;
+
         Visible = false;
+    }
+
+    public void PortraitDisplay (string name)
+    {
+        foreach (PortraitsElements portrait in portraitsData.PortraitList)
+        {
+            if (name == portrait.portraitName)
+            {
+                Debug.Log("PORTRAIT MATCH!");
+                portraitDisplay.sprite = portrait.portraitSprite;
+            }
+        }
     }
 }

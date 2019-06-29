@@ -58,10 +58,7 @@ static class DialogueManager
                 //Parsing if current text is attached to a speaker
                 foreach (string tag in story.currentTags)
                 {
-                    Debug.Log("Current tags = " + tag);
-
-                    if (tag.Contains("Speaker:"))
-                        Debug.Log("Detected a Speaker!");
+                     SpeakerDetection(tag);
                 }
             }
             else
@@ -75,5 +72,19 @@ static class DialogueManager
         UIController.VisibilityOff();
         //Debug.Log("DIALOGUEMANAGER => Closing Dialogue");
         //DialogueInProgress is set to false in DialogueUI, in order to have a little cool down period.
+    }
+
+    static public void SpeakerDetection (string tag)
+    {
+        Debug.Log("Current tags = " + tag);
+
+        if (tag.Contains("Speaker:"))
+        {
+            string SpeakerName = tag.Remove(0,8);
+            SpeakerName = SpeakerName.Trim();
+            Debug.Log("Detected a Speaker! It's:" + SpeakerName);
+
+            UIController.PortraitDisplay(SpeakerName);
+        }
     }
 }

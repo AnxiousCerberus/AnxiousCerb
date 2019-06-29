@@ -2034,7 +2034,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13528
+  m_Name: pb_Mesh13586
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2280,6 +2280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40a08c4fdcbc04428b097a3f41a8f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portraitsData: {fileID: 11400000, guid: 3bf01ff717eef8b4ea97a8657579caa0, type: 2}
   closeCooldDown: 0
 --- !u!1 &1611298422
 GameObject:
