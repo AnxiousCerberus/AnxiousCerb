@@ -18,7 +18,7 @@ namespace TMPro.Examples
 
         void Awake()
         {
-            m_TextComponent = GetComponent<TMP_Text>();
+            m_TextComponent = this.gameObject.GetComponent<TMP_Text>();
             ready = true;
             DialogueManager.fadeController = this;
         }
@@ -113,7 +113,7 @@ namespace TMPro.Examples
             }
 
             ready = true;
-            //Debug.Log("Text Over");
+            Debug.Log("Text Over");
         }
     }
 }

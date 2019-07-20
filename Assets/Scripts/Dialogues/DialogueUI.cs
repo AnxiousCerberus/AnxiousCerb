@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueUI : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class DialogueUI : MonoBehaviour
     Color defaultTextColor;
 
     public PortraitsManager portraitsData;
-    Image portraitDisplay;
+    List<Image> portraitDisplay = new List<Image>();
 
     [HideInInspector]
     public float closeCooldDown = 0;
@@ -20,20 +21,37 @@ public class DialogueUI : MonoBehaviour
 
     bool Visible = true;
 
+    //Choice buttons
+    [SerializeField] GameObject ChoiceButton;
+    [SerializeField] Vector2 FirstChoiceButtonPosition;
+    [SerializeField] float ChoiceButtonsSpace = 10f;
+    List<GameObject> choiceButtonsList = new List<GameObject>();
+
     // Start is called before the first frame update
     void Awake()
     {
-        portraitDisplay = transform.Find("UI_SpeechPortrait").GetComponent<Image>();
+        //TODO : CLEAN THIS PORTRAIT MESS, OH GOD.
+        portraitDisplay.Add (transform.Find("UI_SpeechPortrait").GetComponent<Image>());
+        portraitDisplay.Add(transform.Find("Polaroid1").GetComponent<Image>());
+        portraitDisplay.Add(transform.Find("Polaroid2").GetComponent<Image>());
+
         bubbleImage = this.GetComponent<Image>();
         textDisplay = this.GetComponentInChildren<TMPro.TMP_Text>();
 
         defaultBubbleColor = bubbleImage.color;
         defaultTextColor = textDisplay.color;
-        portraitDisplay.enabled = false;
+
+        foreach (Image image in portraitDisplay)
+        {
+            image.enabled = false;
+        }
 
         DialogueManager.UIController = this;
 
         VisibilityOff();
+
+        if (ChoiceButton == null)
+            Debug.LogError("DialogueUI Manager is present, but no ChoiceButton prefab is set!");
     }
 
     // Update is called once per frame
@@ -49,6 +67,11 @@ public class DialogueUI : MonoBehaviour
                 closeCooldDown = 0f;
             }
         }
+
+        if (choiceButtonsList.Count > 0)
+        {
+
+        }
     }
 
     public void VisibilityOn()
@@ -57,7 +80,10 @@ public class DialogueUI : MonoBehaviour
         bubbleImage.color = defaultBubbleColor;
         textDisplay.color = defaultTextColor;
 
-        portraitDisplay.enabled = true;
+        foreach (Image image in portraitDisplay)
+        {
+            image.enabled = true;
+        }
 
         Visible = true;
     }
@@ -68,7 +94,10 @@ public class DialogueUI : MonoBehaviour
         bubbleImage.color = targetColor;
         textDisplay.color = targetColor;
 
-        portraitDisplay.enabled = false;
+        foreach (Image image in portraitDisplay)
+        {
+            image.enabled = false;
+        }
 
         Visible = false;
     }
@@ -80,8 +109,43 @@ public class DialogueUI : MonoBehaviour
             if (name == portrait.portraitName)
             {
                 Debug.Log("PORTRAIT MATCH!");
-                portraitDisplay.sprite = portrait.portraitSprite;
+                portraitDisplay[0].sprite = portrait.portraitSprite;
             }
         }
+    }
+
+    public void InstantiateChoiceUI (string choiceString)
+    {
+        Vector3 buttonSpawnPosition = FirstChoiceButtonPosition;
+
+        if (choiceButtonsList.Count > 0)
+        {
+            buttonSpawnPosition.y = choiceButtonsList[0].transform.position.y - ChoiceButtonsSpace * choiceButtonsList.Count;
+        }
+
+        GameObject justSpawnedButton = GameObject.Instantiate(ChoiceButton, buttonSpawnPosition, Quaternion.identity, this.transform);
+        justSpawnedButton.GetComponent<Button>().onClick.AddListener(() => ChoiceClicked(choiceButtonsList.IndexOf(justSpawnedButton)));
+        choiceButtonsList.Add(justSpawnedButton);
+
+        if (choiceButtonsList.Count == 1)
+            justSpawnedButton.GetComponent<Button>().Select();
+
+        justSpawnedButton.transform.name += "_" + choiceButtonsList.Count;
+        justSpawnedButton.GetComponentInChildren<TextMeshProUGUI>().text = choiceString;
+    }
+
+    public void DestroyAllChoices ()
+    {
+        foreach (GameObject choiceButton in choiceButtonsList)
+        {
+            Destroy(choiceButton);
+        }
+
+        choiceButtonsList.Clear();
+    }
+
+    void ChoiceClicked (int choiceIndex)
+    {
+        DialogueManager.ChoiceSelect(choiceIndex);
     }
 }
