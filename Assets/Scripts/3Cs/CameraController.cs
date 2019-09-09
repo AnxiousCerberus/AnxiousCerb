@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour
     GameObject currentTarget;
     [SerializeField] bool VerticalConstraint = true;
     [SerializeField] float xOffset = .5f;
+    [SerializeField] float[] XLimits = new float[2];
 
     //Directions
     float xDirection = 0;
@@ -47,7 +48,9 @@ public class CameraController : MonoBehaviour
             Vector3 direction = new Vector3(xDirection, yDirection, 0);
 
             //Move toward target
-            transform.position += direction * Time.deltaTime * speed;
+            Vector3 targetPosition = transform.position + direction * Time.deltaTime * speed;
+            if (targetPosition.x > XLimits[0])
+                transform.position = targetPosition;
         }
 
 

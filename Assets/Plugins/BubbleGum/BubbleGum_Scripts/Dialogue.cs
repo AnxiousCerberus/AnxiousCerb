@@ -42,7 +42,7 @@ public class Dialogue : MonoBehaviour {
         dialogueClosed = false; //Just in case the dialogue was previously closed
         dialogueDisplayObject.SetActive(true);
         dialogueDisplayer = dialogueDisplayObject.GetComponent<DialogueDisplayer>();
-        bubblePointRect = dialogueDisplayer.bubbleBackRectTransform.transform.FindChild("BubblePointer").GetComponent<RectTransform>();
+        bubblePointRect = dialogueDisplayer.bubbleBackRectTransform.transform.Find("BubblePointer").GetComponent<RectTransform>();
 
         story = new Story(inkJSONAsset.text);
 
