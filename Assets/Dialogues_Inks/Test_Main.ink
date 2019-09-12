@@ -1,4 +1,7 @@
 INCLUDE Test2.ink
+INCLUDE Connie_Test.ink
+// Max 95 char per line, plz 
+
 VAR talkedOnce = false
 
 === TEST_SUBSCENE ===

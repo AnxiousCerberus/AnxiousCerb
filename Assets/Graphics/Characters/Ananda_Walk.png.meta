@@ -1,64 +1,43 @@
 fileFormatVersion: 2
-guid: b61926f9a2bafe14b8fb7ee6945a2604
+guid: 6b8301e9c07e849449aa0723590d82bd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1195458779362535816
-    second: unknown_0
+      213: -3799259691382461387
+    second: ananda_walk_sprint_0
   - first:
-      213: -8320757548278642637
-    second: unknown_1
+      213: -4631053282132788226
+    second: ananda_walk_sprint_1
   - first:
-      213: -6772224219630684528
-    second: unknown_2
+      213: -2640503756390167295
+    second: ananda_walk_sprint_2
   - first:
-      213: -1624457943145997941
-    second: unknown_3
+      213: 736847317373738074
+    second: ananda_walk_sprint_3
   - first:
-      213: 3403815374409998926
-    second: unknown_4
+      213: 6145725627721535970
+    second: ananda_walk_sprint_4
   - first:
-      213: 7510165594874259007
-    second: unknown_5
+      213: 3014757603292494989
+    second: ananda_walk_sprint_5
   - first:
-      213: 7225022957171959001
-    second: unknown_6
+      213: 4837551452003032537
+    second: ananda_walk_sprint_6
   - first:
-      213: 2250420894525969951
-    second: unknown_7
+      213: 1158027057200961396
+    second: ananda_walk_sprint_7
   - first:
-      213: 4562625420153205747
-    second: unknown_8
+      213: 8936977803209552548
+    second: ananda_walk_sprint_8
   - first:
-      213: 2908934945869905897
-    second: TestDummy_0
+      213: -4640654750218802562
+    second: ananda_walk_sprint_9
   - first:
-      213: -3355512648236020439
-    second: TestDummy_1
+      213: 9026423595607047761
+    second: ananda_walk_sprint_10
   - first:
-      213: 2530733269290885057
-    second: TestDummy_2
-  - first:
-      213: -4341686385908796445
-    second: TestDummy_3
-  - first:
-      213: -2968562132067543579
-    second: TestDummy_4
-  - first:
-      213: 2847277403816244599
-    second: TestDummy_5
-  - first:
-      213: 8500658146060790651
-    second: TestDummy_6
-  - first:
-      213: -1989991162566550785
-    second: TestDummy_7
-  - first:
-      213: 8569470525788125504
-    second: TestDummy_8
-  - first:
-      213: -7284648169922704201
-    second: TestDummy_9
+      213: 1706841969794444338
+    second: ananda_walk_sprint_11
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -137,28 +116,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TestDummy_0
+      name: ananda_walk_sprint_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 10.1
-        height: 16
+        x: 1
+        y: 18
+        width: 10
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3b8220511844664b95f787a79d223b0
-      internalID: 2908934945869905897
+      spriteID: fe12a3ec367158540abbb5cfcdbcb8bf
+      internalID: -3799259691382461387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestDummy_1
+      name: ananda_walk_sprint_1
       rect:
         serializedVersion: 2
-        x: 10
-        y: 0
-        width: 10.1
-        height: 16
+        x: 12
+        y: 18
+        width: 10
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb22e4fb6a8452c499d5e99d1992a0ce
-      internalID: -3355512648236020439
+      spriteID: 3dd3b6e907136134da9a68bb2e5c0b26
+      internalID: -4631053282132788226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestDummy_2
+      name: ananda_walk_sprint_2
       rect:
         serializedVersion: 2
-        x: 20
-        y: 0
-        width: 10.1
-        height: 16
+        x: 23
+        y: 18
+        width: 10
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cda0a77da8c711c48bca39b8873fcb58
-      internalID: 2530733269290885057
+      spriteID: bea859971e8db664ba53dc9fa0cdd356
+      internalID: -2640503756390167295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestDummy_3
+      name: ananda_walk_sprint_3
       rect:
         serializedVersion: 2
-        x: 30
-        y: 0
-        width: 10.1
-        height: 16
+        x: 34
+        y: 18
+        width: 10
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24efd44d10c144b42b16f98beab7becc
-      internalID: -4341686385908796445
+      spriteID: 38b72400255101046966a5a801aa67f7
+      internalID: 736847317373738074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestDummy_4
+      name: ananda_walk_sprint_4
       rect:
         serializedVersion: 2
-        x: 40
-        y: 0
-        width: 10.1
-        height: 16
+        x: 45
+        y: 18
+        width: 10
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2298bd2778717fc4dbba7a8d20dd810f
-      internalID: -2968562132067543579
+      spriteID: 99952803ac85b1d43b894f86fc4b47e5
+      internalID: 6145725627721535970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestDummy_5
+      name: ananda_walk_sprint_5
       rect:
         serializedVersion: 2
-        x: 50
-        y: 0
-        width: 10.1
-        height: 16
+        x: 56
+        y: 18
+        width: 10
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db3439c2877bbfd43a035be98cb180f8
-      internalID: 2847277403816244599
+      spriteID: da2fc949760018748bfe3d9067690677
+      internalID: 3014757603292494989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestDummy_6
+      name: ananda_walk_sprint_6
       rect:
         serializedVersion: 2
-        x: 60
-        y: 0
-        width: 10.1
-        height: 16
+        x: 1
+        y: 1
+        width: 10
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfe7256ad66ca5d4e859e39b0543b85f
-      internalID: 8500658146060790651
+      spriteID: f500249a61438894ea919aed31ad419d
+      internalID: 4837551452003032537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestDummy_7
+      name: ananda_walk_sprint_7
       rect:
         serializedVersion: 2
-        x: 70
-        y: 0
-        width: 10.1
-        height: 16
+        x: 12
+        y: 1
+        width: 10
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +281,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64cc1919b1f81ec4e9d8e07ef270f28c
-      internalID: -1989991162566550785
+      spriteID: db163965123baa44ea154447a1f474b6
+      internalID: 1158027057200961396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestDummy_8
+      name: ananda_walk_sprint_8
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
-        width: 10.1
-        height: 16
+        x: 23
+        y: 1
+        width: 10
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bc79b0b6df2101439534dd1dffc535a
-      internalID: 8569470525788125504
+      spriteID: 8d80d5dcd77940548885690a2fb7d829
+      internalID: 8936977803209552548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestDummy_9
+      name: ananda_walk_sprint_9
       rect:
         serializedVersion: 2
-        x: 90
-        y: 0
-        width: 10.1
-        height: 16
+        x: 34
+        y: 1
+        width: 10
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,8 +323,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83d962c14a9c6e74b82d663e959fbe07
-      internalID: -7284648169922704201
+      spriteID: 76d8d56bb6899b4469cc753dd0a545e1
+      internalID: -4640654750218802562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ananda_walk_sprint_10
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d42238478979047962120a578bca83
+      internalID: 9026423595607047761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ananda_walk_sprint_11
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42eaef92e577cb74bb82cd508d0322d2
+      internalID: 1706841969794444338
       vertices: []
       indices: 
       edges: []
@@ -364,7 +374,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 334740a09bac82f4da8ff5b1888ceaae
+    spriteID: 6cc117b395162014aabd44cc43a8606a
     internalID: 0
     vertices: []
     indices: 
