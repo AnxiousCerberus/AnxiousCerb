@@ -76,6 +76,7 @@ static class DialogueManager
                     UIController.InstantiateChoiceUI(choice.text);
                 }
 
+                fadeController.GetComponent<TextMeshProUGUI>().text = ""; //Stop displaying text for now
                 displayingChoices = true; //Prevent from spamming "Interact" input
             }
             else

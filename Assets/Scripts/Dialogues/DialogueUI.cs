@@ -23,7 +23,6 @@ public class DialogueUI : MonoBehaviour
 
     //Choice buttons
     [SerializeField] GameObject ChoiceButton;
-    [SerializeField] Vector2 FirstChoiceButtonPosition;
     [SerializeField] float ChoiceButtonsSpace = 10f;
     List<GameObject> choiceButtonsList = new List<GameObject>();
 
@@ -116,11 +115,11 @@ public class DialogueUI : MonoBehaviour
 
     public void InstantiateChoiceUI (string choiceString)
     {
-        Vector3 buttonSpawnPosition = FirstChoiceButtonPosition;
+        Vector3 buttonSpawnPosition = textDisplay.transform.position;
 
         if (choiceButtonsList.Count > 0)
         {
-            buttonSpawnPosition.y = choiceButtonsList[0].transform.position.y - ChoiceButtonsSpace * choiceButtonsList.Count;
+            buttonSpawnPosition.y = choiceButtonsList[choiceButtonsList.Count -1].transform.position.y - ChoiceButtonsSpace;
         }
 
         GameObject justSpawnedButton = GameObject.Instantiate(ChoiceButton, buttonSpawnPosition, Quaternion.identity, this.transform);
