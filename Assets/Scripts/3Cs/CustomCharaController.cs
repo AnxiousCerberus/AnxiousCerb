@@ -70,7 +70,7 @@ public class CustomCharaController : MonoBehaviour
             renderer.flipX = false;
 
         //Dialogue Stuff
-        if (DialogueManager.DialogueInProgress && Input.GetButtonDown("Interact"))
+        if (DialogueManager.DialogueInProgress && !DialogueManager.displayingChoices && Input.GetButtonDown("Interact"))
         {
             DialogueManager.DialogueContinue();
         }

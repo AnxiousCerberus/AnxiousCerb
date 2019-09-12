@@ -12,10 +12,10 @@ static class DialogueManager
     static public DialogueUI UIController;
     static public Transform currentSpeaker;
     static public bool DialogueInProgress = false;
+    static public bool displayingChoices = false;
 
     static Story story = null;
 
-    // Update is called once per frame
     static public void DialogueStart(TextAsset inkJSON, string subScene)
     {
         //Debug.Log("DIALOGUEMANAGER => Starting Dialogue");
@@ -65,7 +65,7 @@ static class DialogueManager
             }
             else if (story.currentChoices.Count > 0)
             {
-                //TO DO : During a choice, maybe deactivate "A" Input?
+
                 Debug.Log(story.currentChoices.Count + " choice(s) exists.");
                 int choiceNumber = 0;
 
@@ -75,6 +75,8 @@ static class DialogueManager
 
                     UIController.InstantiateChoiceUI(choice.text);
                 }
+
+                displayingChoices = true; //Prevent from spamming "Interact" input
             }
             else
                 DialogueEnd();
@@ -113,6 +115,7 @@ static class DialogueManager
         DialogueContinue();
 
         UIController.DestroyAllChoices();
-        //TODO : Not working as expected...
+
+        displayingChoices = false;
     }
 }
