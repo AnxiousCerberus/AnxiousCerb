@@ -53,7 +53,7 @@ static class DialogueManager
                 //Debug.Log("BEFORE talkedOnce = " + story.variablesState["talkedOnce"]);
 
                 fadeController.GetComponent<TextMeshProUGUI>().text = story.Continue().Trim();
-                Debug.Log("DIALOGUEMANAGER => Story continues => " + story.currentText);
+                //Debug.Log("DIALOGUEMANAGER => Story continues => " + story.currentText);
                 fadeController.StartCoroutine(fadeController.AnimateVertexColors());
                 //Debug.Log("Path visited = " + story.state.VisitCountAtPathString("TEST_SUBSCENE.Talk_first"));
 
@@ -65,8 +65,6 @@ static class DialogueManager
             }
             else if (story.currentChoices.Count > 0)
             {
-
-                Debug.Log(story.currentChoices.Count + " choice(s) exists.");
                 int choiceNumber = 0;
 
                 foreach (Choice choice in story.currentChoices)
@@ -115,7 +113,7 @@ static class DialogueManager
         story.ChooseChoiceIndex(choiceIndex);
         DialogueContinue();
 
-        UIController.DestroyAllChoices();
+        UIController.ClearAllChoices();
 
         displayingChoices = false;
     }

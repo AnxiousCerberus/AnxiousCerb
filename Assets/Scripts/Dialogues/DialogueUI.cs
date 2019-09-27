@@ -22,9 +22,12 @@ public class DialogueUI : MonoBehaviour
     bool Visible = true;
 
     //Choice buttons
-    [SerializeField] GameObject ChoiceButton;
+    [SerializeField] GameObject ChoiceButtons;
     [SerializeField] float ChoiceButtonsSpace = 10f;
     List<GameObject> choiceButtonsList = new List<GameObject>();
+    int currentChoiceCount;
+
+    float LineHeight = 0f;
 
     // Start is called before the first frame update
     void Awake()
@@ -48,9 +51,6 @@ public class DialogueUI : MonoBehaviour
         DialogueManager.UIController = this;
 
         VisibilityOff();
-
-        if (ChoiceButton == null)
-            Debug.LogError("DialogueUI Manager is present, but no ChoiceButton prefab is set!");
     }
 
     // Update is called once per frame
@@ -85,6 +85,7 @@ public class DialogueUI : MonoBehaviour
         }
 
         Visible = true;
+        
     }
 
     public void VisibilityOff()
@@ -97,6 +98,8 @@ public class DialogueUI : MonoBehaviour
         {
             image.enabled = false;
         }
+
+        ClearAllChoices();
 
         Visible = false;
     }
@@ -115,31 +118,48 @@ public class DialogueUI : MonoBehaviour
 
     public void InstantiateChoiceUI (string choiceString)
     {
-        Vector3 buttonSpawnPosition = textDisplay.transform.position;
+        //LineHeight = textDisplay.textInfo.lineInfo[0].baseline + textDisplay.textInfo.lineInfo[0]. + textDisplay.textInfo.lineInfo[0].ascender;
+
+        /*Vector3 buttonSpawnPosition = textDisplay.transform.position;
 
         if (choiceButtonsList.Count > 0)
         {
-            buttonSpawnPosition.y = choiceButtonsList[choiceButtonsList.Count -1].transform.position.y - ChoiceButtonsSpace;
+            buttonSpawnPosition.y = choiceButtonsList[choiceButtonsList.Count -1].transform.position.y - textDisplay.fontSize - textDisplay.lineSpacing;
         }
 
         GameObject justSpawnedButton = GameObject.Instantiate(ChoiceButton, buttonSpawnPosition, Quaternion.identity, this.transform);
         justSpawnedButton.GetComponent<Button>().onClick.AddListener(() => ChoiceClicked(choiceButtonsList.IndexOf(justSpawnedButton)));
+        //justSpawnedButton.GetComponentInChildren<TMPro.TMP_Text>().margin = textDisplay.margin;
+
         choiceButtonsList.Add(justSpawnedButton);
 
         if (choiceButtonsList.Count == 1)
             justSpawnedButton.GetComponent<Button>().Select();
 
         justSpawnedButton.transform.name += "_" + choiceButtonsList.Count;
-        justSpawnedButton.GetComponentInChildren<TextMeshProUGUI>().text = choiceString;
+        justSpawnedButton.GetComponentInChildren<TextMeshProUGUI>().text = choiceString;*/
+        Transform currentChoice;
+        currentChoice = ChoiceButtons.transform.GetChild(currentChoiceCount);
+        currentChoice.gameObject.SetActive(true);
+
+        currentChoice.GetComponent<Button>().onClick.AddListener(() => ChoiceClicked(currentChoice.transform.GetSiblingIndex()));
+        currentChoice.GetComponentInChildren<TextMeshProUGUI>().text = choiceString;
+
+        if (currentChoiceCount == 0)
+            currentChoice.GetComponent<Button>().Select();
+
+        currentChoiceCount++;
     }
 
-    public void DestroyAllChoices ()
+    public void ClearAllChoices ()
     {
-        foreach (GameObject choiceButton in choiceButtonsList)
+        foreach (Transform choice in ChoiceButtons.transform)
         {
-            Destroy(choiceButton);
+            choice.GetComponent<Button>().onClick.RemoveAllListeners();
+            choice.gameObject.SetActive(false);
         }
 
+        currentChoiceCount = 0;
         choiceButtonsList.Clear();
     }
 
