@@ -118,26 +118,6 @@ public class DialogueUI : MonoBehaviour
 
     public void InstantiateChoiceUI (string choiceString)
     {
-        //LineHeight = textDisplay.textInfo.lineInfo[0].baseline + textDisplay.textInfo.lineInfo[0]. + textDisplay.textInfo.lineInfo[0].ascender;
-
-        /*Vector3 buttonSpawnPosition = textDisplay.transform.position;
-
-        if (choiceButtonsList.Count > 0)
-        {
-            buttonSpawnPosition.y = choiceButtonsList[choiceButtonsList.Count -1].transform.position.y - textDisplay.fontSize - textDisplay.lineSpacing;
-        }
-
-        GameObject justSpawnedButton = GameObject.Instantiate(ChoiceButton, buttonSpawnPosition, Quaternion.identity, this.transform);
-        justSpawnedButton.GetComponent<Button>().onClick.AddListener(() => ChoiceClicked(choiceButtonsList.IndexOf(justSpawnedButton)));
-        //justSpawnedButton.GetComponentInChildren<TMPro.TMP_Text>().margin = textDisplay.margin;
-
-        choiceButtonsList.Add(justSpawnedButton);
-
-        if (choiceButtonsList.Count == 1)
-            justSpawnedButton.GetComponent<Button>().Select();
-
-        justSpawnedButton.transform.name += "_" + choiceButtonsList.Count;
-        justSpawnedButton.GetComponentInChildren<TextMeshProUGUI>().text = choiceString;*/
         Transform currentChoice;
         currentChoice = ChoiceButtons.transform.GetChild(currentChoiceCount);
         currentChoice.gameObject.SetActive(true);

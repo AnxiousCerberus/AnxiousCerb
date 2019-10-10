@@ -48,20 +48,24 @@ static class DialogueManager
         if (fadeController.ready)
         {
             //Debug.Log("DIALOGUEMANAGER => Fade Controller is ready");
-            if (story.canContinue)
+            if (story.canContinue && story.currentChoices.Count <= 0)
             {
                 //Debug.Log("BEFORE talkedOnce = " + story.variablesState["talkedOnce"]);
 
-                fadeController.GetComponent<TextMeshProUGUI>().text = story.Continue().Trim();
-                //Debug.Log("DIALOGUEMANAGER => Story continues => " + story.currentText);
-                fadeController.StartCoroutine(fadeController.AnimateVertexColors());
-                //Debug.Log("Path visited = " + story.state.VisitCountAtPathString("TEST_SUBSCENE.Talk_first"));
+                string currentLine = story.Continue().Trim();
 
                 //Parsing if current text is attached to a speaker
                 foreach (string tag in story.currentTags)
                 {
                     SpeakerDetection(tag);
                 }
+
+                if (currentLine.Length > 0) //Make sure the line contains at least one char, else the fadeController will get stuck
+                {
+                    fadeController.GetComponent<TextMeshProUGUI>().text = currentLine;
+                    fadeController.StartCoroutine(fadeController.AnimateVertexColors());
+                }
+                DialogueContinue(); //If no char is to be found, let's proceed immediately to next line without the player's input
             }
             else if (story.currentChoices.Count > 0)
             {
