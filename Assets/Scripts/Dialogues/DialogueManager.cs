@@ -57,7 +57,7 @@ static class DialogueManager
                 //Parsing if current text is attached to a speaker
                 foreach (string tag in story.currentTags)
                 {
-                    SpeakerDetection(tag);
+                    TagDetection(tag);
                 }
 
                 if (currentLine.Length > 0) //Make sure the line contains at least one char, else the fadeController will get stuck
@@ -96,7 +96,7 @@ static class DialogueManager
         //DialogueInProgress is set to false in DialogueUI, in order to have a little cool down period.
     }
 
-    static public void SpeakerDetection (string tag)
+    static public void TagDetection (string tag)
     {
         Debug.Log("Current tags = " + tag);
 
@@ -108,6 +108,10 @@ static class DialogueManager
             Debug.Log("Detected a Speaker! It's:" + SpeakerName);
 
             UIController.PortraitDisplay(SpeakerName);
+        }
+        else
+        {
+            //TODO : START DOING OTHER TAGS PARSING HERE
         }
     }
 
