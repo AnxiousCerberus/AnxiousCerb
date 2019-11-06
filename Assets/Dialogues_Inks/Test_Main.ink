@@ -1,5 +1,7 @@
 INCLUDE Test2.ink
 INCLUDE Connie_Test.ink
+INCLUDE Chips
+
 // Max 95 char per line, plz 
 
 VAR talkedOnce = false

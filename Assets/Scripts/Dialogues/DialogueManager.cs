@@ -9,6 +9,7 @@ static class DialogueManager
 {
 
     static public RollingTextFade fadeController;
+    //static public TagParser tagParser;
     static public DialogueUI UIController;
     static public Transform currentSpeaker;
     static public bool DialogueInProgress = false;
@@ -111,7 +112,8 @@ static class DialogueManager
         }
         else
         {
-            //TODO : START DOING OTHER TAGS PARSING HERE
+            Debug.Log("Encountered Tag = " + tag);
+            TagParser.GetTag(tag);
         }
     }
 

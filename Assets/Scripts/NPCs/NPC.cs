@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
 
+    public string inkName;
     bool playerNear = false;
     public bool PlayerCanTriggerTalk = true;
     [SerializeField] TextAsset dialogueJSON = null;

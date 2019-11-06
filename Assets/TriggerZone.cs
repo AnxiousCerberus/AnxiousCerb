@@ -5,8 +5,10 @@ using UnityEngine;
 public class TriggerZone : MonoBehaviour
 {
     public enum TriggerType { cutscene, other };
-    TriggerType currentType = TriggerType.cutscene;
+    public TriggerType currentType = TriggerType.cutscene;
 
+    [SerializeField] TextAsset dialogueJSON = null;
+    public string SubScene;
 
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,6 +33,14 @@ public class TriggerZone : MonoBehaviour
        StateTracker tracker = GameObject.Find("StateTracker").GetComponent<StateTracker>();
         tracker.currentState = StateTracker.GameState.cutscene;
 
-
+        if (dialogueJSON == null)
+            Debug.LogWarning(transform.name + " triggered a dialogue but no JSON was set!");
+        else
+        {
+            if (SubScene != null && SubScene != "")
+                DialogueManager.DialogueStart(dialogueJSON, SubScene);
+            else
+                DialogueManager.DialogueStart(dialogueJSON);
+        }
     }
 }

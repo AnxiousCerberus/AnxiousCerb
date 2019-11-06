@@ -15,9 +15,17 @@ MonoBehaviour:
   PortraitList:
   - portraitName: Ananda
     portraitSprite: {fileID: 21300000, guid: 295f5eac79e2e70429c8575b7cabc733, type: 3}
+    prefab: {fileID: 4953553126160486334, guid: be3be2226d21821439f249ca8d0f131d,
+      type: 3}
   - portraitName: Sandy
     portraitSprite: {fileID: 21300000, guid: b1aa2c53259ad48448593d1152248b60, type: 3}
+    prefab: {fileID: 5922514070041596044, guid: 15ddd7fe27cc29141b719a34768fe4b3,
+      type: 3}
   - portraitName: Violette
     portraitSprite: {fileID: 21300000, guid: 6283eefac537f2f40b5259701bd571b2, type: 3}
+    prefab: {fileID: 7189438904184139374, guid: c194b1a57a0cc164ca03417e63f9f0ca,
+      type: 3}
   - portraitName: Connie
     portraitSprite: {fileID: 21300000, guid: 1c0ad57e8d7db8c4aab88aed263b765a, type: 3}
+    prefab: {fileID: 4800999741979062756, guid: b971a585d73359745b9eb59f52753ade,
+      type: 3}
