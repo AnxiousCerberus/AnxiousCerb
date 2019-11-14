@@ -51,8 +51,6 @@ static class DialogueManager
             //Debug.Log("DIALOGUEMANAGER => Fade Controller is ready");
             if (story.canContinue && story.currentChoices.Count <= 0)
             {
-                //Debug.Log("BEFORE talkedOnce = " + story.variablesState["talkedOnce"]);
-
                 string currentLine = story.Continue().Trim();
 
                 //Parsing if current text is attached to a speaker

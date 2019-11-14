@@ -4,17 +4,14 @@ INCLUDE Chips
 
 // Max 95 char per line, plz 
 
-VAR talkedOnce = false
-
 === TEST_SUBSCENE ===
-{- talkedOnce == false:
+{not Talk_first:
      -> Talk_first
     - else:
      -> Talk_second
 }
 
 = Talk_first
-~ talkedOnce = true
 # Speaker: Sandy
 "Heya!"
 # Speaker: Ananda

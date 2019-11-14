@@ -1,4 +1,7 @@
 === CHIPS ===
 -Bon alors...
-#MOVE: Connie > ChoreoTarget1
+#MOVE: Ananda > GROSCACA
+#CHOICEACTIONS: Prendre une chips; Manger BRUYAMMENT; Manger doucement; Se casser;
+#ENDCONTEXTUALACTIONS
+// CECI EST UN COMMENTAIRE
 -> END
