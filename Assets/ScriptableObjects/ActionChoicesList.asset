@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ActionChoicesList
   m_EditorClassIdentifier: 
   actionChoices:
-  - InkName: CHIPS
+  - InkName: SceneDeLaChips_Actions1
     prefab: {fileID: 4191043681784141842, guid: 5a8ebdcfa69ed964a877c80a589f54bb,
       type: 3}

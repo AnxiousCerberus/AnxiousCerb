@@ -1,7 +1,7 @@
 === CHIPS ===
 -Bon alors...
 #MOVE: Ananda > GROSCACA
-#CHOICEACTIONS: Prendre une chips; Manger BRUYAMMENT; Manger doucement; Se casser;
+#CHOICEACTIONS: SceneDeLaChips_Actions1
 #ENDCONTEXTUALACTIONS
 // CECI EST UN COMMENTAIRE
 -> END

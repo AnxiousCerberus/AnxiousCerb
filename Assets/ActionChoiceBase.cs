@@ -10,7 +10,14 @@ public class ActionChoiceBase : MonoBehaviour
 
     public void Start ()
     {
-        Debug.Log(nameof(AlterInkVar));
+    }
+
+    public void TriggerChoice (int choiceIndex)
+    {
+        if (choicesSetContent[choiceIndex].parameter != "")
+            CallMethodChoice(choicesSetContent[choiceIndex].Method, choicesSetContent[choiceIndex].parameter);
+        else
+            CallMethodChoice(choicesSetContent[choiceIndex].Method);
     }
 
     public void CallMethodChoice (string MethodName, string Parameter)
@@ -33,7 +40,7 @@ public class ActionChoiceBase : MonoBehaviour
 
     public void TriggerAnim ()
     {
-
+        Debug.Log("An anim was triggered");
     }
 
 

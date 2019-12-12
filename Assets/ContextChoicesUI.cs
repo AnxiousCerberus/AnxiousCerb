@@ -11,13 +11,18 @@ public class ContextChoicesUI : MonoBehaviour
     public GameObject currentChoiceObject = null;
     public List<TextMeshProUGUI> UITextChoices;
 
-    public void populateChoices ()
+    public ActionChoiceBase currentActionList;
+
+    public void populateChoices (GameObject spawnedActionList)
     {
         //TODO : GOOD LORD, FACTORIZE THIS.
         for (int i = 0; i < UITextChoices.Count; i++)
         {
             UITextChoices[i].text = currentChoiceObject.GetComponent<ActionChoiceBase>().choicesSetContent[i].choiceString;
         }
+
+        currentActionList = spawnedActionList.GetComponent<ActionChoiceBase>();
+        allowInput = true;
     }
 
     // Start is called before the first frame update
@@ -29,5 +34,13 @@ public class ContextChoicesUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (allowInput)
+        {
+            //TODO : USE THE REAL INPUT MANAGER PLEASE
+            if (Input.GetKeyDown ("u"))
+            {
+                currentActionList.TriggerChoice(0);
+            }
+        }
     }
 }

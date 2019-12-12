@@ -70,8 +70,8 @@ static class TagParser
             contextChoicesUI = GameObject.FindObjectOfType<ContextChoicesUI>();
         }
 
-        contextChoicesUI.currentChoiceObject = GameObject.Instantiate(contextChoicesUI.actionChoiceList.actionChoices[0].prefab);
-        contextChoicesUI.populateChoices();
+        GameObject spawnedActionList = contextChoicesUI.currentChoiceObject = GameObject.Instantiate(contextChoicesUI.actionChoiceList.actionChoices[0].prefab);
+        contextChoicesUI.populateChoices(spawnedActionList);
         //TODO : THIS IS OF COURSE A TEST, PLEASE MAKE IT INSTANTIATE THE ACTION LIST DEMANDED.
     }
 }

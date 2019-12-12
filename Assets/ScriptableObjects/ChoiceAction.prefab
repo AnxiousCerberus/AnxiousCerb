@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choicesSetContent:
   - choiceString: Prendre une chips
-    Method: 
+    Method: TriggerAnim
     parameter: 
   - choiceString: Manger BRUYAMMENT
     Method: 
