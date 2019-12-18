@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionChoices:
   - InkName: SceneDeLaChips_Actions1
-    prefab: {fileID: 4191043681784141842, guid: 5a8ebdcfa69ed964a877c80a589f54bb,
-      type: 3}
+    prefab: {fileID: 11400000, guid: aa484c9fde9311b46b2d7d5e4d23823a, type: 2}

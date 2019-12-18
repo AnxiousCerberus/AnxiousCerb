@@ -4,20 +4,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionChoiceBase : MonoBehaviour
+
+[CreateAssetMenu(fileName = "ActionChoiceBase", menuName = "ScriptableObjects/ActionChoiceBase", order = 4)]
+public class ActionChoiceBase : ScriptableObject
 {
     public List<ChoiceSetContent> choicesSetContent = new List<ChoiceSetContent>(4);
 
-    public void Start ()
-    {
-    }
-
     public void TriggerChoice (int choiceIndex)
     {
+        foreach (string methodName in choicesSetContent[choiceIndex].Method)
         if (choicesSetContent[choiceIndex].parameter != "")
-            CallMethodChoice(choicesSetContent[choiceIndex].Method, choicesSetContent[choiceIndex].parameter);
+            CallMethodChoice(methodName, choicesSetContent[choiceIndex].parameter);
         else
-            CallMethodChoice(choicesSetContent[choiceIndex].Method);
+            CallMethodChoice(methodName);
     }
 
     public void CallMethodChoice (string MethodName, string Parameter)
@@ -35,7 +34,7 @@ public class ActionChoiceBase : MonoBehaviour
 
     public void AlterInkVar ()
     {
-
+        Debug.Log("Altering an ink var...");
     }
 
     public void TriggerAnim ()
@@ -50,6 +49,6 @@ public class ActionChoiceBase : MonoBehaviour
 public class ChoiceSetContent
 {
     public string choiceString;
-    public string Method;
+    public List<string> Method = new List<string>();
     public string parameter;
 }

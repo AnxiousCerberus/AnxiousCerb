@@ -14,5 +14,5 @@ public class ActionChoicesList : ScriptableObject
 public class ActionChoices
 {
     public string InkName;
-    public GameObject prefab;
+    public ScriptableObject prefab;
 }

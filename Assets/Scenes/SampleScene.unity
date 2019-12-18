@@ -2102,6 +2102,7 @@ MonoBehaviour:
   - {fileID: 387781897}
   - {fileID: 563847808}
   - {fileID: 268806600}
+  currentActionList: {fileID: 0}
 --- !u!1 &754655779
 GameObject:
   m_ObjectHideFlags: 0
