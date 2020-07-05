@@ -7,8 +7,10 @@ using TMPro;
 public class DialogueUI : MonoBehaviour
 {
 
+    [SerializeField] TextAsset test_dialogueJSON = null;
+
     Color defaultBubbleColor;
-    Color defaultTextColor;
+    public Color defaultTextColor;
 
     public PortraitsManager portraitsData;
     List<Image> portraitDisplay = new List<Image>();
@@ -33,15 +35,15 @@ public class DialogueUI : MonoBehaviour
     void Awake()
     {
         //TODO : CLEAN THIS PORTRAIT MESS, OH GOD.
-        portraitDisplay.Add (transform.Find("UI_SpeechPortrait").GetComponent<Image>());
-        portraitDisplay.Add(transform.Find("Polaroid1").GetComponent<Image>());
-        portraitDisplay.Add(transform.Find("Polaroid2").GetComponent<Image>());
+        //portraitDisplay.Add (transform.Find("UI_SpeechPortrait").GetComponent<Image>());
+        //portraitDisplay.Add(transform.Find("Polaroid1").GetComponent<Image>());
+        //portraitDisplay.Add(transform.Find("Polaroid2").GetComponent<Image>());
 
-        bubbleImage = this.GetComponent<Image>();
+        //bubbleImage = this.GetComponent<Image>();
         textDisplay = this.GetComponentInChildren<TMPro.TMP_Text>();
 
-        defaultBubbleColor = bubbleImage.color;
-        defaultTextColor = textDisplay.color;
+        //defaultBubbleColor = bubbleImage.color;
+        //defaultTextColor = textDisplay.color;
 
         foreach (Image image in portraitDisplay)
         {
@@ -51,6 +53,13 @@ public class DialogueUI : MonoBehaviour
         DialogueManager.UIController = this;
 
         VisibilityOff();
+    }
+
+    private void Start()
+    {
+        //DEBUG ONLY!
+        if (test_dialogueJSON != null)
+            DialogueManager.DialogueStart(test_dialogueJSON);
     }
 
     // Update is called once per frame
@@ -67,6 +76,12 @@ public class DialogueUI : MonoBehaviour
             }
         }
 
+        //Dialogue Stuff
+        if (DialogueManager.DialogueInProgress && !DialogueManager.displayingChoices && Input.GetButtonDown("Interact"))
+        {
+            DialogueManager.DialogueContinue();
+        }
+
         if (choiceButtonsList.Count > 0)
         {
 
@@ -76,8 +91,8 @@ public class DialogueUI : MonoBehaviour
     public void VisibilityOn()
     {
         Color targetColor = new Color(255, 255, 255, 255);
-        bubbleImage.color = defaultBubbleColor;
-        textDisplay.color = defaultTextColor;
+        //bubbleImage.color = defaultBubbleColor;
+        //textDisplay.color = defaultTextColor;
 
         foreach (Image image in portraitDisplay)
         {
@@ -91,8 +106,8 @@ public class DialogueUI : MonoBehaviour
     public void VisibilityOff()
     {
         Color targetColor = new Color(255, 255, 255, 0);
-        bubbleImage.color = targetColor;
-        textDisplay.color = targetColor;
+        //bubbleImage.color = targetColor;
+        //textDisplay.color = targetColor;
 
         foreach (Image image in portraitDisplay)
         {
@@ -133,18 +148,18 @@ public class DialogueUI : MonoBehaviour
 
     public void ClearAllChoices ()
     {
-        foreach (Transform choice in ChoiceButtons.transform)
+        /*foreach (Transform choice in ChoiceButtons.transform)
         {
             choice.GetComponent<Button>().onClick.RemoveAllListeners();
             choice.gameObject.SetActive(false);
         }
 
         currentChoiceCount = 0;
-        choiceButtonsList.Clear();
+        choiceButtonsList.Clear();*/
     }
 
     void ChoiceClicked (int choiceIndex)
     {
-        DialogueManager.ChoiceSelect(choiceIndex);
+        //DialogueManager.ChoiceSelect(choiceIndex);
     }
 }

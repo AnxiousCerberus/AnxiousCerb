@@ -4,6 +4,7 @@ using UnityEngine;
 using Ink.Runtime;
 using TMPro.Examples;
 using TMPro;
+using System.ComponentModel;
 
 static class DialogueManager
 {
@@ -19,6 +20,9 @@ static class DialogueManager
 
     static public void DialogueStart(TextAsset inkJSON, string subScene)
     {
+        if (fadeController == null)
+            fadeController = GameObject.FindObjectOfType<RollingTextFade>().GetComponent<RollingTextFade>();
+
         //Debug.Log("DIALOGUEMANAGER => Starting Dialogue");
         if (story == null)
             story = new Story(inkJSON.text);
@@ -33,6 +37,9 @@ static class DialogueManager
 
     static public void DialogueStart(TextAsset inkJSON)
     {
+        if (fadeController == null)
+            fadeController = GameObject.FindObjectOfType<RollingTextFade>().GetComponent<RollingTextFade>();
+
         Debug.Log("DIALOGUEMANAGER => Starting Dialogue");
         if (story == null)
             story = new Story(inkJSON.text);

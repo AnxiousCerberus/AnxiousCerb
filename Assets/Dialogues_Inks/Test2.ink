@@ -1,6 +1,6 @@
 === Violette_Test ===
 # Speaker: Violette
--Bonjour, je suis là et je sers just à tester des trucs MDR.
+-Bonjour, je suis là et je sers juste à tester des trucs MDR.
 # Speaker: Ananda
 +[Dac allez ciao (Sticky Choice)]
     # Speaker: Violette
