@@ -77,11 +77,10 @@ namespace TMPro.Examples
             int totalCharacterCount = textInfo.characterCount;
             int lastVisibleCharacter = 0;
 
-            //TODO : REFACTO THIS
+            //Set all text transparent before we begin fading in
+            //TODO : REFACTO THIS, ça fait pas mal doublon avec ce qui est déclaré plus bas
             for (int currentCharacter = 0; currentCharacter < totalCharacterCount; currentCharacter++)
             {
-                //Set all text transparent before we begin fading in
-                // Get the index of the first vertex used by this text element.
                 // Get the index of the material used by the current character.
                 int materialIndex = textInfo.characterInfo[currentCharacter].materialReferenceIndex;
 
@@ -127,20 +126,14 @@ namespace TMPro.Examples
                     // Get the index of the first vertex used by this text element.
                     int vertexIndex = textInfo.characterInfo[currentCharacter].vertexIndex;
 
-
-
                     // Get the current character's alpha value.
                     byte alpha = (byte)Mathf.Clamp(newVertexColors[vertexIndex + 0].a, 0, targetAlpha);
 
                     if (alpha < targetAlpha)
-                    {
                         FadeAlpha(currentCharacter, ref alpha, vertexIndex);
-                    }
 
                     if (alpha >= alphaTresholdBeforeNextChar)
                         currentCharCountToUpdate++;
-
-
 
                     // Get the index of the first vertex used by this text element.
                     int lastvisiblevertex = textInfo.characterInfo[lastVisibleCharacter].vertexIndex;
@@ -148,14 +141,14 @@ namespace TMPro.Examples
                     //Get it again after Coroutine updated it
                     byte lastVisibleAlpha = (byte)Mathf.Clamp(newVertexColors[lastvisiblevertex + 0].a, 0, targetAlpha);
 
-                    if (currentCharacter >= lastVisibleCharacter)
-                        UnityEngine.Debug.Log("Last Char is = " + textInfo.characterInfo[currentCharacter].character);
+                    //if (currentCharacter >= lastVisibleCharacter)
+                        //UnityEngine.Debug.Log("Last Char is = " + textInfo.characterInfo[currentCharacter].character);
 
                     // If reached the last character of the total displayed rn, we can end our loop.
                     if (lastVisibleAlpha >= targetAlpha)
                     {
-                        UnityEngine.Debug.Log("Alpha Fade ended with " + currentCharacter + "/" + lastVisibleCharacter + "/" + totalCharacterCount + " & Alpha = " + alpha);
-                        UnityEngine.Debug.Log("FYI, LastVisibleCharacter " + lastVisibleCharacter + " => " + textInfo.characterInfo[lastVisibleCharacter].character + " Alpha was = " + lastVisibleAlpha);
+                        //UnityEngine.Debug.Log("Alpha Fade ended with " + currentCharacter + "/" + lastVisibleCharacter + "/" + totalCharacterCount + " & Alpha = " + alpha);
+                        //UnityEngine.Debug.Log("FYI, LastVisibleCharacter " + lastVisibleCharacter + " => " + textInfo.characterInfo[lastVisibleCharacter].character + " Alpha was = " + lastVisibleAlpha);
                         updateThis = false;
                     }
 
