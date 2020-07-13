@@ -133,6 +133,7 @@ public class DialogueUI : MonoBehaviour
 
     public void InstantiateChoiceUI (string choiceString)
     {
+        //"Instantiating" is more of a "populating" choices as we retrieve the current choices objects and put the texts displayed in place
         Transform currentChoice;
         currentChoice = ChoiceButtons.transform.GetChild(currentChoiceCount);
         currentChoice.gameObject.SetActive(true);
@@ -148,18 +149,19 @@ public class DialogueUI : MonoBehaviour
 
     public void ClearAllChoices ()
     {
-        /*foreach (Transform choice in ChoiceButtons.transform)
+        //This does NOT destroy objects, it just deactivates listeners and disable objects, then reset choice count
+        foreach (Transform choice in ChoiceButtons.transform)
         {
             choice.GetComponent<Button>().onClick.RemoveAllListeners();
             choice.gameObject.SetActive(false);
         }
 
         currentChoiceCount = 0;
-        choiceButtonsList.Clear();*/
+        choiceButtonsList.Clear();
     }
 
     void ChoiceClicked (int choiceIndex)
     {
-        //DialogueManager.ChoiceSelect(choiceIndex);
+        DialogueManager.ChoiceSelect(choiceIndex);
     }
 }
