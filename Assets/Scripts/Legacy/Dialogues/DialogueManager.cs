@@ -5,6 +5,7 @@ using Ink.Runtime;
 using TMPro.Examples;
 using TMPro;
 using System.ComponentModel;
+using System;
 
 static class DialogueManager
 {
@@ -60,7 +61,7 @@ static class DialogueManager
             {
                 string currentLine = story.Continue().Trim();
 
-                //Parsing if current text is attached to a speaker
+                //Parsing if any tag is currently active
                 foreach (string tag in story.currentTags)
                 {
                     TagDetection(tag);
@@ -106,14 +107,18 @@ static class DialogueManager
     {
         Debug.Log("Current tags = " + tag);
 
-        if (tag.Contains("Speaker:"))
+        if (tag.Contains("Pos"))
         {
             //Cutting some extra characters to only keep the speaker's name
-            string SpeakerName = tag.Remove(0,8);
-            SpeakerName = SpeakerName.Trim();
-            Debug.Log("Detected a Speaker! It's:" + SpeakerName);
+            string[] splitTag = tag.Split(':');
+            int posNumber;
+            Int32.TryParse (splitTag[0].Remove(0,3), out posNumber);
 
-            UIController.PortraitDisplay(SpeakerName);
+            string SpeakerName = tag.Split(':')[1];
+            SpeakerName = SpeakerName.Trim();
+            Debug.Log("Detected a Speaker! It's: " + SpeakerName + " and they will be displayed at pos " + posNumber);
+
+            UIController.PortraitDisplay(SpeakerName, posNumber);
         }
         else
         {

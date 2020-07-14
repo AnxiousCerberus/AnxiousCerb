@@ -13,7 +13,7 @@ public class DialogueUI : MonoBehaviour
     public Color defaultTextColor;
 
     public PortraitsManager portraitsData;
-    List<Image> portraitDisplay = new List<Image>();
+    GameObject ActorParent; 
 
     [HideInInspector]
     public float closeCooldDown = 0;
@@ -34,23 +34,18 @@ public class DialogueUI : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //TODO : CLEAN THIS PORTRAIT MESS, OH GOD.
-        //portraitDisplay.Add (transform.Find("UI_SpeechPortrait").GetComponent<Image>());
-        //portraitDisplay.Add(transform.Find("Polaroid1").GetComponent<Image>());
-        //portraitDisplay.Add(transform.Find("Polaroid2").GetComponent<Image>());
-
         //bubbleImage = this.GetComponent<Image>();
         textDisplay = this.GetComponentInChildren<TMPro.TMP_Text>();
 
         //defaultBubbleColor = bubbleImage.color;
         //defaultTextColor = textDisplay.color;
 
-        foreach (Image image in portraitDisplay)
-        {
-            image.enabled = false;
-        }
+        ActorParent = GameObject.Find("Actors");
 
         DialogueManager.UIController = this;
+
+        if (portraitsData == null)
+            UnityEngine.Debug.LogError("WARNING! " + transform.name + " is missing a Portraits Manager scripted object! Please check this gameObject.", this.gameObject);
 
         VisibilityOff();
     }
@@ -94,11 +89,6 @@ public class DialogueUI : MonoBehaviour
         //bubbleImage.color = defaultBubbleColor;
         //textDisplay.color = defaultTextColor;
 
-        foreach (Image image in portraitDisplay)
-        {
-            image.enabled = true;
-        }
-
         Visible = true;
         
     }
@@ -109,24 +99,24 @@ public class DialogueUI : MonoBehaviour
         //bubbleImage.color = targetColor;
         //textDisplay.color = targetColor;
 
-        foreach (Image image in portraitDisplay)
-        {
-            image.enabled = false;
-        }
-
         ClearAllChoices();
 
         Visible = false;
     }
 
-    public void PortraitDisplay (string name)
+    public void PortraitDisplay (string name, int pos)
     {
-        foreach (PortraitsElements portrait in portraitsData.PortraitList)
+        if (string.Equals(name, "none", System.StringComparison.OrdinalIgnoreCase))
+            ActorParent.transform.GetChild(pos).GetComponent<SpriteRenderer>().sprite = null;
+        else
         {
-            if (name == portrait.portraitName)
+            foreach (PortraitsElements portrait in portraitsData.PortraitList)
             {
-                Debug.Log("PORTRAIT MATCH!");
-                portraitDisplay[0].sprite = portrait.portraitSprite;
+                if (name == portrait.portraitName)
+                {
+                    Debug.Log("PORTRAIT MATCH!");
+                    ActorParent.transform.GetChild(pos).GetComponent<SpriteRenderer>().sprite = portrait.portraitSprite;
+                }
             }
         }
     }

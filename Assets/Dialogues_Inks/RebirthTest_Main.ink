@@ -1,13 +1,26 @@
+#Pos0:None
+#Pos1:None
+
 New Main test !
 Welcome to the new main test for Ink implementation for LIKE A DOG.
 I'll try to remember how to do all this shit.
 
 Displaying lines inside dialog box.
+
+#Pos0:Ananda
+
 Lorem Ipsum and all this shit. I hope it works.
+
+#Pos1:Violette
 
 +This is a choice if I remember correctly
 
+
 Yeah you chose the first choice. Congrats, I guess.
+#Pos0: Violette
+Here, have a violette clone, lol.
+
+
 
 -> first_choice
 

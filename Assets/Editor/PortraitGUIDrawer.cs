@@ -18,7 +18,6 @@ public class PortraitGUIDrawer : PropertyDrawer
 
         EditorGUI.PropertyField(contentPosition, property.FindPropertyRelative("portraitSprite"), new GUIContent("Sprite"));
         contentPosition.x += contentPosition.width;
-        EditorGUI.PropertyField(contentPosition, property.FindPropertyRelative("prefab"), new GUIContent("Prefab"));
         EditorGUI.EndProperty();
     }
 }

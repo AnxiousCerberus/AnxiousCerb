@@ -14,5 +14,4 @@ public class PortraitsElements
 {
     public string portraitName;
     public Sprite portraitSprite;
-    public GameObject prefab;
 }
