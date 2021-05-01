@@ -103,7 +103,7 @@ namespace TMPro.Examples
 
             while (updateThis)
             {
-                int currentCharCountToUpdate = 1;
+                int currentCharCountToUpdate = 0;
 
                 for (int currentCharacter = 0; currentCharacter < currentCharCountToUpdate; currentCharacter++)
                 {

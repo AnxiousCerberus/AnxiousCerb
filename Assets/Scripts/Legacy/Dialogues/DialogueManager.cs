@@ -11,7 +11,6 @@ static class DialogueManager
 {
 
     static public RollingTextFade fadeController;
-    //static public TagParser tagParser;
     static public DialogueUI UIController;
     static public Transform currentSpeaker;
     static public bool DialogueInProgress = false;
@@ -21,10 +20,7 @@ static class DialogueManager
 
     static public void DialogueStart(TextAsset inkJSON, string subScene)
     {
-        if (fadeController == null)
-            fadeController = GameObject.FindObjectOfType<RollingTextFade>().GetComponent<RollingTextFade>();
-
-        //Debug.Log("DIALOGUEMANAGER => Starting Dialogue");
+        Debug.Log("DIALOGUEMANAGER => Starting Dialogue");
         if (story == null)
             story = new Story(inkJSON.text);
 
@@ -35,12 +31,8 @@ static class DialogueManager
 
         DialogueContinue();
     }
-
     static public void DialogueStart(TextAsset inkJSON)
     {
-        if (fadeController == null)
-            fadeController = GameObject.FindObjectOfType<RollingTextFade>().GetComponent<RollingTextFade>();
-
         Debug.Log("DIALOGUEMANAGER => Starting Dialogue");
         if (story == null)
             story = new Story(inkJSON.text);
@@ -53,10 +45,6 @@ static class DialogueManager
 
     static public void DialogueContinue()
     {
-
-        if (fadeController.ready)
-        {
-            //Debug.Log("DIALOGUEMANAGER => Fade Controller is ready");
             if (story.canContinue && story.currentChoices.Count <= 0)
             {
                 string currentLine = story.Continue().Trim();
@@ -67,12 +55,9 @@ static class DialogueManager
                     TagDetection(tag);
                 }
 
-                if (currentLine.Length > 0) //Make sure the line contains at least one char, else the fadeController will get stuck
-                {
-                    fadeController.GetComponent<TextMeshProUGUI>().text = currentLine;
-                    fadeController.StartCoroutine(fadeController.AnimateVertexColors());
-                }
-                DialogueContinue(); //If no char is to be found, let's proceed immediately to next line without the player's input
+
+                //TODO : Call a text animation function here instead of just displaying the text as-is
+                UIController.textDisplay.text = currentLine;
             }
             else if (story.currentChoices.Count > 0)
             {
@@ -85,14 +70,10 @@ static class DialogueManager
                     UIController.InstantiateChoiceUI(choice.text);
                 }
 
-                fadeController.GetComponent<TextMeshProUGUI>().text = ""; //Stop displaying text for now
                 displayingChoices = true; //Prevent from spamming "Interact" input
             }
             else
                 DialogueEnd();
-        }
-        else
-            Debug.Log("Fade Controller not ready");
     }
 
     static public void DialogueEnd()
@@ -107,7 +88,7 @@ static class DialogueManager
     {
         Debug.Log("Current tags = " + tag);
 
-        if (tag.Contains("Pos"))
+        if (tag.Contains("POS"))
         {
             //Cutting some extra characters to only keep the speaker's name
             string[] splitTag = tag.Split(':');
@@ -119,6 +100,18 @@ static class DialogueManager
             Debug.Log("Detected a Speaker! It's: " + SpeakerName + " and they will be displayed at pos " + posNumber);
 
             UIController.PortraitDisplay(SpeakerName, posNumber);
+        }
+        else if (tag.Contains("SPEAKER"))
+        {
+            string SpeakerName = tag.Split(':')[1];
+            SpeakerName = SpeakerName.Trim();
+
+            if (SpeakerName == "none" | SpeakerName == "None")
+            {
+                UIController.SpeakerNameDisplay.text = " ";
+            }
+            else
+                UIController.SpeakerNameDisplay.text = SpeakerName;
         }
         else
         {

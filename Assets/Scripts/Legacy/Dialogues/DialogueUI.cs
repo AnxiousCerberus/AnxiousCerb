@@ -19,7 +19,9 @@ public class DialogueUI : MonoBehaviour
     public float closeCooldDown = 0;
 
     Image bubbleImage;
-    TMPro.TMP_Text textDisplay;
+    public TMPro.TMP_Text textDisplay;
+    public TMPro.TMP_Text SpeakerNameDisplay;
+    public GameObject DialogueCamera;
 
     bool Visible = true;
 
@@ -35,12 +37,21 @@ public class DialogueUI : MonoBehaviour
     void Awake()
     {
         //bubbleImage = this.GetComponent<Image>();
-        textDisplay = this.GetComponentInChildren<TMPro.TMP_Text>();
+        textDisplay = this.transform.Find("Text").GetComponentInChildren<TMPro.TMP_Text>();
+        SpeakerNameDisplay = this.transform.Find("SpeakerName").GetComponentInChildren<TMPro.TMP_Text>();
+
+        //Initialize by clearing debug text & Sprites
+        textDisplay.text = "";
+        SpeakerNameDisplay.text = "";
+
+
+        DialogueCamera = Camera.main.gameObject;
 
         //defaultBubbleColor = bubbleImage.color;
         //defaultTextColor = textDisplay.color;
 
         ActorParent = GameObject.Find("Actors");
+        ClearAllSprites();
 
         DialogueManager.UIController = this;
 
@@ -104,10 +115,15 @@ public class DialogueUI : MonoBehaviour
         Visible = false;
     }
 
+    public Transform GetActorPos(int pos)
+    {
+        return ActorParent.transform.GetChild(pos);
+    }
+
     public void PortraitDisplay (string name, int pos)
     {
         if (string.Equals(name, "none", System.StringComparison.OrdinalIgnoreCase))
-            ActorParent.transform.GetChild(pos).GetComponent<SpriteRenderer>().sprite = null;
+            GetActorPos(pos).GetComponent<SpriteRenderer>().sprite = null;
         else
         {
             foreach (PortraitsElements portrait in portraitsData.PortraitList)
@@ -115,7 +131,8 @@ public class DialogueUI : MonoBehaviour
                 if (name == portrait.portraitName)
                 {
                     Debug.Log("PORTRAIT MATCH!");
-                    ActorParent.transform.GetChild(pos).GetComponent<SpriteRenderer>().sprite = portrait.portraitSprite;
+                    GetActorPos(pos).GetComponent<SpriteRenderer>().sprite = portrait.portraitSprite;
+                    GetActorPos(pos).transform.name = name;
                 }
             }
         }
@@ -153,5 +170,13 @@ public class DialogueUI : MonoBehaviour
     void ChoiceClicked (int choiceIndex)
     {
         DialogueManager.ChoiceSelect(choiceIndex);
+    }
+
+    public void ClearAllSprites ()
+    {
+        foreach (SpriteRenderer sprite in ActorParent.GetComponentsInChildren(typeof(SpriteRenderer)))
+        {
+            sprite.sprite = null;
+        }
     }
 }

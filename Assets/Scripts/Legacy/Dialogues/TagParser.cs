@@ -14,14 +14,20 @@ static class TagParser
 
 
         //TODO : A terme, un switch ça vaudra sans doute mieux
-        if (tag.Contains("MOVE"))
-        {
+        if(tag.Contains("FOCUS"))
+            FocusCamera(tag);
+        else if (tag.Contains("MOVE"))
             Move(tag);
-        }
         else if (tag.Contains("CHOICEACTIONS"))
-        {
             ChoiceActions(tag);
-        }
+    }
+
+    static void FocusCamera (string tag)
+    {
+        string[] splitted = tag.Split(':');
+        string targetName = splitted[1];
+
+        dialogueUI.DialogueCamera.GetComponent<CameraFocus>().target = GameObject.Find(targetName).transform.GetChild(0).transform;
     }
 
     static void Move (string tag)
