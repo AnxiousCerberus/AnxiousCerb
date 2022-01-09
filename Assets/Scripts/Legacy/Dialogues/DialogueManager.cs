@@ -88,7 +88,7 @@ static class DialogueManager
     {
         Debug.Log("Current tags = " + tag);
 
-        if (tag.Contains("POS"))
+        if (tag.Contains("SPRITE"))
         {
             //Cutting some extra characters to only keep the speaker's name
             string[] splitTag = tag.Split(':');
@@ -101,7 +101,7 @@ static class DialogueManager
 
             UIController.PortraitDisplay(SpeakerName, posNumber);
         }
-        else if (tag.Contains("SPEAKER"))
+        else if (tag.Contains("SPEAKERNAME"))
         {
             string SpeakerName = tag.Split(':')[1];
             SpeakerName = SpeakerName.Trim();

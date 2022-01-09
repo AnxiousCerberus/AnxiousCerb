@@ -126,13 +126,13 @@ public class DialogueUI : MonoBehaviour
             GetActorPos(pos).GetComponent<SpriteRenderer>().sprite = null;
         else
         {
-            foreach (PortraitsElements portrait in portraitsData.PortraitList)
+            for (int i = 0; i < portraitsData.OnlyStrings.Count; i++)
             {
-                if (name == portrait.portraitName)
+                if (name == portraitsData.OnlyStrings[i])
                 {
                     Debug.Log("PORTRAIT MATCH!");
-                    GetActorPos(pos).GetComponent<SpriteRenderer>().sprite = portrait.portraitSprite;
-                    GetActorPos(pos).transform.name = name;
+                    GetActorPos(pos).GetComponent<SpriteRenderer>().sprite = portraitsData.OnlySprites[i];
+                    GetActorPos(pos).transform.name = portraitsData.OnlyStrings[i];
                 }
             }
         }
