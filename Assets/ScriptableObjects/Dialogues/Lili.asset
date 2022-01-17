@@ -10,8 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a49eb6e5f9ea8d4d9fd3851586ae9ed, type: 3}
-  m_Name: PortraitsData
+  m_Name: Lili
   m_EditorClassIdentifier: 
   IdunnojustTesting: {fileID: 0}
-  OnlySprites: []
-  OnlyStrings: []
+  OnlySprites:
+  - {fileID: 21300000, guid: 96037da040c4b9640b8af63168f0cac9, type: 3}
+  - {fileID: 21300000, guid: ca527a3fb2d44d44085f6e4802b5c765, type: 3}
+  - {fileID: 21300000, guid: 5512a8b89f0c3b341b1d84d568ef8507, type: 3}
+  OnlyStrings:
+  - idle
+  - happy
+  - pensive

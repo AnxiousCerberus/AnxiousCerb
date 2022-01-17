@@ -93,13 +93,19 @@ static class DialogueManager
             //Cutting some extra characters to only keep the speaker's name
             string[] splitTag = tag.Split(':');
             int posNumber;
-            Int32.TryParse (splitTag[0].Remove(0,3), out posNumber);
+            Int32.TryParse (splitTag[0].Remove(0,6), out posNumber);
+            Debug.Log("Pos Number is " + splitTag[0].Remove(0, 6) + " and uhhhh " + posNumber);
 
-            string SpeakerName = tag.Split(':')[1];
+            string[] splitString = tag.Split(':');
+            string SpeakerName = splitString[1];
+            string EmotionName = "idle";
+            if (splitString.Length > 2)
+                EmotionName = tag.Split(':')[2];
+
             SpeakerName = SpeakerName.Trim();
-            Debug.Log("Detected a Speaker! It's: " + SpeakerName + " and they will be displayed at pos " + posNumber);
+            Debug.Log("Detected a Speaker! It's: " + SpeakerName + " with emotion " + EmotionName + " and they will be displayed at pos " + posNumber);
 
-            UIController.PortraitDisplay(SpeakerName, posNumber);
+            UIController.PortraitDisplay(SpeakerName, EmotionName, posNumber);
         }
         else if (tag.Contains("SPEAKERNAME"))
         {

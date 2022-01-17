@@ -1,15 +1,15 @@
 Ding !
-#SPRITE0:scared
+#SPRITE0:scaredqkdhqsh
 Hein ?! Quoi ?! C’est quoi ce truc ?!
 
-#SPRITE0:neutral
+#SPRITE0:Claus:thinking
 C’est… Une sonnette, oui.
 
 Ma sonnette. Pour ma porte. 
 
 Et bien que j’ai failli tomber de ma chaise sur le coup de la surprise, j’ai heureusement réussi à me relever dignement pour atteindre la porte.
 
-#SPRITE0:thinking
+
 Mais une fois la main sur la poignée, c’était reparti pour un tour de questions.
 
 A quoi allait ressembler mon premier client ? Sur quel type d’affaire je vais tomber ? Une affaire simple, pour commencer ?
@@ -18,7 +18,7 @@ A quoi allait ressembler mon premier client ? Sur quel type d’affaire je vais 
 Ou quelque chose de bien trop compliqué ? Est-ce que je perdrais mon emploi après ma première affaire, à cause d’un échec ?
 
 Est-ce qu’au final, c’est peut-être mieux que la personne derrière cette porte se soit juste trompé d’adresse ?
-#SPRITE0:embarassed
+#SPRITE1:Lili:happy
 N’est-ce pas un peu lâche au fond d’espérer ça…?
 
 FIN DE L'EXEMPLE VOILA DSL

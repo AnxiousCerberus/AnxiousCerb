@@ -240,6 +240,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6005761067527243502, guid: 176b35b63930b704da3585e1383502ce,
+        type: 3}
+      propertyPath: portraitsData.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005761067527243502, guid: 176b35b63930b704da3585e1383502ce,
+        type: 3}
+      propertyPath: portraitsData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3bf01ff717eef8b4ea97a8657579caa0,
+        type: 2}
+    - target: {fileID: 6005761067527243502, guid: 176b35b63930b704da3585e1383502ce,
+        type: 3}
+      propertyPath: portraitsData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5289501fc620caf4f825791f2c8e94d9,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 176b35b63930b704da3585e1383502ce, type: 3}
 --- !u!1001 &1342202576

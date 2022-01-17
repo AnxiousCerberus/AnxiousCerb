@@ -12,7 +12,7 @@ public class DialogueUI : MonoBehaviour
     Color defaultBubbleColor;
     public Color defaultTextColor;
 
-    public PortraitsManager portraitsData;
+    public PortraitsManager[] portraitsData;
     GameObject ActorParent; 
 
     [HideInInspector]
@@ -120,20 +120,35 @@ public class DialogueUI : MonoBehaviour
         return ActorParent.transform.GetChild(pos);
     }
 
-    public void PortraitDisplay (string name, int pos)
+    public void PortraitDisplay (string name, string emotion, int pos)
     {
         if (string.Equals(name, "none", System.StringComparison.OrdinalIgnoreCase))
             GetActorPos(pos).GetComponent<SpriteRenderer>().sprite = null;
         else
         {
-            for (int i = 0; i < portraitsData.OnlyStrings.Count; i++)
+            bool spriteFound = false;
+            foreach (PortraitsManager portraitManager in portraitsData)
             {
-                if (name == portraitsData.OnlyStrings[i])
+                if (portraitManager.name == name)
                 {
-                    Debug.Log("PORTRAIT MATCH!");
-                    GetActorPos(pos).GetComponent<SpriteRenderer>().sprite = portraitsData.OnlySprites[i];
-                    GetActorPos(pos).transform.name = portraitsData.OnlyStrings[i];
+                    for (int i = 0; i < portraitManager.OnlyStrings.Count; i++)
+                    {
+                        if (emotion == portraitManager.OnlyStrings[i])
+                        {
+                            Debug.Log("PORTRAIT MATCH!");
+                            GetActorPos(pos).GetComponent<SpriteRenderer>().sprite = portraitManager.OnlySprites[i];
+                            GetActorPos(pos).transform.name = portraitManager.OnlyStrings[i];
+                            spriteFound = true;
+                            break;
+                        }
+                    }                   
                 }
+            }
+
+            if (!spriteFound)
+            {
+                Debug.LogError("No sprite found for the following tag : " + name);
+                GetActorPos(pos).GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Debug_SpriteError");
             }
         }
     }

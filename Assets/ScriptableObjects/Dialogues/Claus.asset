@@ -18,8 +18,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5c65bf453f29ff84ea852b4726ff35eb, type: 3}
   - {fileID: 21300000, guid: b99b04bf607568249800f82a51ee8f88, type: 3}
   - {fileID: 21300000, guid: beed93b683e305c4f9182bebe1a13404, type: 3}
+  - {fileID: 21300000, guid: 860ed3136eb651c46a4d024c70cc2aa0, type: 3}
   OnlyStrings:
   - thinking
   - embarassed
   - neutral
   - scared
+  - coucoucmoi
