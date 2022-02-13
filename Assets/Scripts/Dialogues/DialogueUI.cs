@@ -36,7 +36,6 @@ public class DialogueUI : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //bubbleImage = this.GetComponent<Image>();
         textDisplay = this.transform.Find("Text").GetComponentInChildren<TMPro.TMP_Text>();
         SpeakerNameDisplay = this.transform.Find("SpeakerName").GetComponentInChildren<TMPro.TMP_Text>();
 
@@ -46,9 +45,6 @@ public class DialogueUI : MonoBehaviour
 
 
         DialogueCamera = Camera.main.gameObject;
-
-        //defaultBubbleColor = bubbleImage.color;
-        //defaultTextColor = textDisplay.color;
 
         ActorParent = GameObject.Find("Actors");
         ClearAllSprites();
