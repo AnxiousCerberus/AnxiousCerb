@@ -682,7 +682,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   test_dialogueJSON: {fileID: 4900000, guid: df73eace936a23945bc0f6da0d34c6b9, type: 3}
   defaultTextColor: {r: 0, g: 0, b: 0, a: 0}
-  portraitsData: {fileID: 11400000, guid: 3bf01ff717eef8b4ea97a8657579caa0, type: 2}
+  portraitsData:
+  - {fileID: 11400000, guid: 3bf01ff717eef8b4ea97a8657579caa0, type: 2}
+  - {fileID: 11400000, guid: 5289501fc620caf4f825791f2c8e94d9, type: 2}
   closeCooldDown: 0
   textDisplay: {fileID: 0}
   SpeakerNameDisplay: {fileID: 0}
