@@ -86,7 +86,7 @@ public class DialogueUI : MonoBehaviour
 
         if (choiceButtonsList.Count > 0)
         {
-
+            Debug.Log("Got choices, wiating...");
         }
     }
 

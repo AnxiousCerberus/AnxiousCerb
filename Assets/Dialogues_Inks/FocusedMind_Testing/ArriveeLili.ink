@@ -9,6 +9,28 @@ Ma sonnette. Pour ma porte.
 
 Et bien que j’ai failli tomber de ma chaise sur le coup de la surprise, j’ai heureusement réussi à me relever dignement pour atteindre la porte.
 
+* This is a choice that can only be chosen once
+
+-> knotName
+
+* This is another one
+
+J'ai pas d'idée mdr 
+-> END
+
+* TROISIEME OHLALA
+
+J'ai pas d'idée mdr mais ct bien la troisieme
+-> END
+
+* QUATRIEME PTN
+
+Bref t'as compris l'idée
+-> END
+
+=== knotName ===
+This is the content of the knot.
+
 
 Mais une fois la main sur la poignée, c’était reparti pour un tour de questions.
 
@@ -22,6 +44,7 @@ Est-ce qu’au final, c’est peut-être mieux que la personne derrière cette p
 N’est-ce pas un peu lâche au fond d’espérer ça…?
 
 FIN DE L'EXEMPLE VOILA DSL
+-> END
 
 Toutes ces pensées ont bien dû me traverser l’esprit pendant une seconde... C’était déjà trop de temps perdu. Alors je vais m’arrêter là et tourner cette fichue poignée.
 
@@ -137,3 +160,5 @@ J’aurais bien envie de me poser quelques secondes afin de me faire une introsp
 Je suis enfin au travail, je n’ai plus le temps pour ça.
 
 J’analyserai la photo de Lili plus tard, quand je serai plus au calme. Pour l’instant, continuons la route vers le manoir.
+
+-> END
