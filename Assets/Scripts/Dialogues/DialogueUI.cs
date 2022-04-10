@@ -159,6 +159,8 @@ public class DialogueUI : MonoBehaviour
         currentChoice.GetComponent<Button>().onClick.AddListener(() => ChoiceClicked(currentChoice.transform.GetSiblingIndex()));
         currentChoice.GetComponentInChildren<TextMeshProUGUI>().text = choiceString;
 
+        Debug.Log("Current choice count = " + currentChoiceCount);
+
         if (currentChoiceCount == 0)
             currentChoice.GetComponent<Button>().Select();
 

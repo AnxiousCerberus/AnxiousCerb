@@ -47,7 +47,8 @@ static class DialogueManager
     {
             if (story.canContinue && story.currentChoices.Count <= 0)
             {
-                string currentLine = story.Continue().Trim();
+            UIController.VisibilityOn();
+            string currentLine = story.Continue().Trim();
 
                 //Parsing if any tag is currently active
                 foreach (string tag in story.currentTags)
@@ -70,8 +71,10 @@ static class DialogueManager
                     UIController.InstantiateChoiceUI(choice.text);
                 }
 
+                //Hide text of previous line
+                UIController.textDisplay.color = new Color(255, 255, 255, 0);
                 displayingChoices = true; //Prevent from spamming "Interact" input
-            }
+        }
             else
                 DialogueEnd();
     }
@@ -128,6 +131,7 @@ static class DialogueManager
 
     static public void ChoiceSelect (int choiceIndex)
     {
+        UIController.textDisplay.color = new Color(255, 255, 255, 255);
         Debug.Log("Dialogue choice made. No= " + choiceIndex);
         story.ChooseChoiceIndex(choiceIndex);
         DialogueContinue();
